@@ -1,0 +1,34 @@
+figure {
+    width: 400px;
+    height: 190px;
+    @include nav-logo($logo, false, no-repeat, 0 50px);
+    float: left;
+    display: block;
+    margin: 0;
+
+    @include break(959px) {
+        width: inherit;
+        height: 140px;
+        float: none;
+        background-position: center;
+    }
+    @include break(459px) {
+        background-size: contain;
+        height: 100px;
+    }
+
+}
+nav {
+    @include navigation-bar();
+
+    @include break(959px) {
+        width: inherit;
+        height: 50px;
+        float: none;
+        text-align: center;
+    }
+
+    @include break(459px) {
+        margin-bottom: 40px !important;
+    }
+}

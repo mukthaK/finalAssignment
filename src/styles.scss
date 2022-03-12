@@ -1,0 +1,32 @@
+@import "variables";
+@import "mixins";
+@import "navigation";
+@import "header";
+@import "content";
+@import "footer";
+
+/* BASIC STYLES */
+body {
+    font-family: $font;
+    font-size:1em;
+    line-height:2em;
+    @include nav-logo($background-img, $white, repeat-x, false);
+    margin:0;
+}
+main { 
+    width:940px;
+    margin:0 auto;
+    padding:0 10px;
+
+    @include break(959px) {
+        width: 768px;
+    }
+
+    @include break(767px) {
+        width: 460px;
+    }
+
+    @include break(459px) {
+        width: 300px;
+    }
+}

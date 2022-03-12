@@ -1,0 +1,63 @@
+//Logo
+@mixin nav-logo($image, $color:false, $repeat:false, $position:false) {
+    background-image: $image;
+    @if ($color) { background-color: $color; }
+    @if ($repeat) { background-repeat: $repeat; }
+    @if ($position) { background-position: $position; }
+}
+
+//Navigation menu
+@mixin navigation-bar($width: 540px, $height: 190px) {
+    width: $width;
+    height: $height;
+    float: left;
+    text-align: right;
+
+    ul {
+        list-style-type: none; 
+        margin-top: 95px;
+
+        @include break(959px) {
+            margin-top: 0;
+        }
+
+        li {
+            display: inline;
+            font-size: 0.8em;
+            margin-right: 10px;
+
+            @include break(959px) {
+                font-size: 1em;
+                margin: 0 10px;
+            }
+
+            @include break(767px) {
+                font-size: 0.8em;
+                margin: 0 5px;
+            }
+                    
+            a {
+                color: $red;
+                text-decoration: none;
+                letter-spacing: -0.01em;
+                &:hover {
+                    color: $white;   
+                }
+            }
+            
+        }
+    }
+
+}
+
+//Media queries
+@mixin break($screen-size) {
+    @media screen and (max-width: $screen-size) {
+        @content;
+    }
+}
+
+
+
+
+
